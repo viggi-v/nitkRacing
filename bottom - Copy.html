@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>	Bottom</title>
+		<link rel="stylesheet" href="">
+		<script src="js/jq3.js"></script>
+		<script   src="http://code.jquery.com/color/jquery.color.plus-names-2.1.2.js"   integrity="sha256-MyufSJPYmyLJzomPsAOszwxMNH2iQOeZXhMAKfh04P8="   crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(function(){
+				$(".contact").mouseenter(function(){
+					$pseudo = $(this).find(".pseudo");
+					console.log("Enter");
+					$pseudo.animate({
+						top:"10px",
+						backgroundColor:"rgba(0,0,0,0.4)"
+					});
+				});
+				$(".contact").mouseleave(function(){
+					$pseudo = $(this).find(".pseudo");
+					console.log("leave");
+					$pseudo.animate({
+						top:"230px",
+						backgroundColor:"rgba(0,0,0,1)"
+					});
+				});
+			});
+		</script>
+		<style>		
+		*{
+		margin:0px;
+		padding:0px;
+		box-sizing: border-box;
+		}
+		.section{
+		border:1px solid blue;
+		width:60%;
+		margin:0px auto;
+		}
+		.avatar{width:200px;
+		height:250px;
+		}
+		
+		.avatar_holder, .pseudo{
+		width:200px;
+		height:250px;
+		display: inline-block;
+		}
+		.pseudo{
+		position: absolute;
+		left:10px;
+		background-color:rgba(0,0,0,1);
+		top:230px;
+		}
+		.contact_holder{
+		position: relative;
+		height:100vh;
+		border:1px solid green;
+		padding:10px;
+		}
+		.social{
+		list-style-type:none;
+		}
+		.social li{
+		display:inline;
+		}
+		.contact_holder .icon_social{
+		width:28px;
+		height:28px;
+		-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+		filter: grayscale(100%);
+		transition-duration: 0.7s;
+		}
+		.contact_holder{
+		overflow:hidden;
+		}
+		.contact_holder .icon_social:hover{
+		-webkit-filter: none; /* Chrome, Safari, Opera */
+		filter: none;
+		transition-duration: 0.7s;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div id="contact" class="content">
+			<div class="front">
+				<div class="section">
+					<h1>Contact us:</h1>
+					<div class="contact_holder">
+						<div class="contact">
+							<div class="avatar_holder">
+								<img src="resources/img/captain.jpg" alt="avatar" class="avatar">
+							</div>
+							<div class="pseudo">
+								<div class="contact_details">
+									<h3 class="name">Arvind Satish</h3>
+									<h4 class="designation">Captain</h4>
+									<h4 class="phone">+9897642342</h4>
+									<ul class="social">
+										<li>
+											<a href="www.facebook.com">
+											<img class="icon_social" src="resources/img/facebook.png" alt=""></a>
+										</li>
+										<li>
+											<a href="www.linkedin.com">
+											<img class="icon_social" src="resources/img/linkedin.png" alt=""></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,747 @@
+/*
+ * Fonts
+ */
+@font-face {
+	font-family: titlefont;
+	src: url(FFF_Tusj.ttf);
+}
+@font-face {
+	font-family: mainfont;
+	src: url(Arsenal-Regular.otf);
+}
+
+/*
+ * Keyframes
+ */
+@keyframes fadefromright {
+	from {
+		opacity: 0;
+		left: 20px;
+	}
+	to {
+		opacity: 1;
+		left: 0px;
+	}
+}
+@keyframes fadefromleft {
+	from {
+		opacity: 0;
+		right: 20px;
+	}
+	to {
+		opacity: 1;
+		right: 0px;
+	}
+}
+
+/*
+ * Common CSS 
+ */
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	background-color: #eee;
+}
+.content {
+	font-family: mainfont;
+	width: 100%;
+	height: 100vh;
+	margin: 0px;
+	padding-top: 50px;
+	position: relative;
+}
+
+/* 
+ * The columns
+ * These are default values but changed on media queries.
+ */
+.col-1 {
+	width: 8.33%;
+}
+.col-2 {
+	width: 16.66%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.33%;
+}
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.33%;
+}
+.col-11 {
+	width: 91.66%;
+}
+.col-12 {
+	width: 100%;
+}
+
+/*
+ * The TopNav
+ */
+.fixed-top {
+	display: block;
+	position: fixed;
+	height: 100px;
+	top: 0px;
+	width: 100%;
+	z-index: 9;
+	transition-duration: 0.4s;
+}
+.sticky {
+	background-color: white;
+	height: 50px !important;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transition-duration: 0.4s;
+}
+.sticky .menu {
+	padding-top: 10px !important;
+}
+.fixed-top .menu {
+	float: right;
+	display: block;
+	padding-top: 50px;
+}
+.nav-icon {
+	height: 50px;
+	width: 50px;
+	position: relative;
+	margin: 0px 10px;
+	float: right;
+}
+.nav-icon div {
+	height: 3px;
+	border-radius: 1px;
+	float: right;
+	width: 30px;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.nav-icon div::before, .nav-icon div::after {
+	content: "";
+	height: 3px;
+	border-radius: 1px;
+	width: 100%;
+	position: absolute;
+	background: #000;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-delay: 0s;
+	transition-delay: 0s;
+}
+.nav-icon div::before {
+	top: -10px;
+}
+.nav-icon div::after {
+	top: 10px;
+}
+.cross.active .span::before {
+	top: 0px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.cross.active .span::after {
+	top: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.cross.active .span {
+	background: none;
+}
+.pagetitle,#nav_ind{
+	display: none;
+}
+.sticky .pagetitle {
+    display: inline-block;
+    float: left;
+    padding: 15px;
+    font-family: mainfont;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+}
+.sticky #nav_ind {
+    display: inline-block;
+    float: left;
+    font-family: mainfont;
+    padding: 15px;
+}
+/*
+ * Pages
+ */
+
+/*
+ * Home
+ */
+#home {
+	background-image: url("../img/home_bg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+}
+.titlecontainer {
+	font-family: titlefont;
+	font-size: 72px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	padding: 15px;
+	color: white;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+/*
+ * The slider at home
+ */
+#home .flexslider {
+	height: 60px;
+	display: block;
+}
+#home .flexslider li {
+	display: inline-block;
+	width: 200px;
+}
+
+/*
+ * About US
+ */
+#about {
+	padding-top: 0px !important;
+	background-color: #eee;
+}
+#about .pic_holder {
+	height: 40vh;
+	background-image: url("../img/nitk-min.jpg");
+	background-size: cover;
+	background-repeat: none;
+}
+#about .pic_holder h1 {
+	padding-top: 25vh;
+	font-size: 48px;
+	color: white;
+}
+#about .left_desc {
+	float: left;
+	padding-top: 10px;
+	text-align: end;
+	font-size: 36px;
+	line-height: 36px;
+}
+#about .right_desc .number {
+	padding: 0px;
+	font-size: 72px;
+}
+#about .right_desc {
+	float: left;
+}
+#about .right_desc .text {
+	font-size: 30px;
+}
+#about .right_desc ul {
+	list-style-type: none;
+	padding: 0px;
+}
+#about .right_desc ul li {
+	padding: 10px;
+}
+
+/*
+ * What We Do
+ */
+#what_we_do {
+	overflow: hidden;
+}
+#what_we_do .titlecontainer {
+	font-size: 72px;
+}
+#what_we_do .buttonholder button {
+	background-color: rgba(0, 68, 167, 0.42);
+	color: white;
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 15px;
+	font-family: mainfont;
+}
+video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
+	background-size: cover;
+	transition: 1s opacity;
+}
+
+/*
+ * Our Cars
+ */
+#our_cars {
+	background-color: #eee;
+}
+#our_cars .flexslider {
+	width: 60%;
+	height: 75vh;
+	margin: 0px auto;
+}
+#our_cars .flex-next {
+	display: block;
+	width: 48px;
+	height: 75px;
+	background-image: url("../img/right.png");
+	background-size: cover;
+}
+#our_cars .flex-prev {
+	display: block;
+	width: 48px;
+	height: 75px;
+	background-image: url("../img/left.png");
+	background-size: cover;
+}
+#our_cars .flex-viewport {
+	max-height: 75vh;
+}
+#our_cars .flexslider .slides {
+	max-height: 75vh;
+}
+#our_cars .flexslider .slides p {
+	position: absolute;
+	bottom: 0px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+	text-align: center;
+	font-size: 24px;
+}
+
+/*
+ * Achievements
+ */
+#achievements {
+	background-color: white;
+	height: 100vh;
+}
+#achievements .achievements {
+	padding-left: 40px;
+	list-style-image: url("../img/trophy.png");
+}
+
+/*
+ * Budget
+ */
+#budget {
+	background-color: white;
+	height: 100vh;
+}
+#chart_div {
+	display: block;
+	float: left;
+}
+#side_exp {
+	display: block;
+	float: left;
+}
+
+/*
+ * The Explanations of the budget
+ */
+.explanation {
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 9;
+	background-color: rgba(0, 0, 0, 0.69);
+	width: 100%;
+	height: 100vh;
+	color: white;
+	font-size: 60px;
+	-webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+	-moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+	transition: opacity 0.3s 0s, visibility 0s 0.3s;
+}
+.explanation h1 {
+	font-size: 72px;
+}
+.toplayer button {
+	float: right;
+	margin: 20px;
+	border: 0px;
+	background-color: transparent;
+	color: white;
+	font-size: 0.8em;
+}
+.explanation_content {
+	border: 1px solid white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	transform: translate(-50%, -50%);
+	display: block;
+	width: 0px;
+	height: 0px;
+	background-color: white;
+	color: black;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*
+ * Sponsors
+ */
+#sponsors {
+	background-size: cover;
+	height: 200vh;
+}
+.sponsorholder {
+	width: 80%;
+	margin: 0px auto;
+}
+.sponsor {
+	display: block;
+	height: 150px;
+	width: 25%;
+	float: left;
+	padding: 10px;
+	overflow: hidden;
+	margin-top:10px;
+}
+.sponsor img {
+	height: auto;
+	width: 100%;
+	margin: 0px auto;
+	display: block;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.sponsor:hover img {
+	-moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.2);
+}
+.sponsor.title_sponsor {
+	margin: 0px;
+	width: 100%;
+	height: 250px;
+}
+.sponsor.sponsor_1 {
+	margin: 0px;
+	width: 50%;
+	height: 200px;
+}
+.sponsor_type {
+	text-align: center;
+	font-size: 36px;
+	overflow: hidden;
+}
+
+/*
+ * Why sponsor us
+ */
+#whySponsorUs {
+	background-size: cover;
+}
+
+/*
+ * Team
+ */
+#team {
+	background-image: url("../img/bg_contact.jpg");
+}
+#team .section {
+	width: 60%;
+	margin: 0px auto;
+}
+#team .section h1 {
+	text-align: center;
+	font-size: 4em;
+	color: white;
+}
+.contact_holder {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	position: relative;
+	padding: 10px;
+	overflow: hidden;
+}
+.contact_holder ul {
+	list-style-type: none;
+}
+.contact_holder ul li {
+
+	/* Well This is Supposed Only for a desktop!!!**************************
+	***********************************************************************
+	*  
+	*   Big Blank Put for purpose
+	*   
+	*/
+	display: block;
+	float: left;
+}
+.avatar {
+	width: 200px;
+	height: 250px;
+}
+.avatar_holder, .pseudo {
+	width: 200px;
+	height: 250px;
+	display: inline-block;
+}
+.pseudo {
+	position: absolute;
+	left: 0px;
+	background-color: rgba(0, 0, 0, 1);
+	top: 230px;
+	color: white;
+	text-align: center;
+}
+.contact_visible {
+	background-color: rgba(0, 0, 0, 0.45);
+	text-align: left;
+}
+.social {
+	list-style-type: none;
+}
+.social li {
+	display: inline;
+}
+.pseudo .icon_social {
+	width: 28px;
+	height: 28px;
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+	filter: grayscale(100%);
+	transition-duration: 0.4s;
+}
+.icon_social:hover {
+	-webkit-filter: none; /* Chrome, Safari, Opera */
+	filter: none;
+	transition-duration: 0.4s;
+}
+.contact_person {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	border: 5px solid white;
+	margin: 10px;
+}
+
+/*
+ * Contact
+ */
+.mapholder {
+	height: 40vh;
+	width: 100%;
+	margin: 0px auto;
+	background-image: url("../img/map.jpg");
+}
+.bottom_content {
+	width: 60%;
+	margin: 0px auto;
+	text-align: center;
+}
+.bottom_content h3 {
+	padding: 10px;
+}
+.bottom_content .icon_social {
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+	filter: grayscale(100%);
+	transition-duration: 0.4s;
+}
+.bottom_content .icon_social:hover {
+	-webkit-filter: none; /* Chrome, Safari, Opera */
+	filter: none;
+	transition-duration: 0.4s;
+}
+
+/*
+ * sidenav
+ */
+.sidenav {
+	font-family: mainfont;
+	font-size:36px;
+	display: block;
+	position: fixed;
+	right: 0px;
+	z-index: 8;
+	width: 0px;
+	opacity: 0;
+	transition-duration: 0.5s;
+	background-color: rgba(0, 0, 0, 0.8);
+	height: 100%;
+}
+.sidenav #nav_menu ul {
+	margin-top: 100px;
+	list-style-type: none;
+}
+.sidenav #nav_menu ul li a {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	color: white;
+}
+.sidenav #nav_menu ul li {
+	text-align: center;
+}
+.sidenav #nav_menu ul li:hover {
+	background-color: #aaa;
+	border-bottom: 2px solid white;
+}
+.visible_navigation{
+	opacity: 1;
+	width: 100%;
+	transition-duration: 0.5s;
+}
+.visible_navigation #contact{
+	    font-family: mainfont;
+    float: left;
+    margin: 0px auto;
+    font-size: 98px;
+    width: 50%;
+    opacity: 1;
+    transition-duration: 0.5s;
+    color: white;
+    text-align: center;
+}
+.visible_navigation #nav_menu{
+	float:right;
+	opacity: 1;
+	width: 50%;
+	transition-duration: 0.5s;
+}
+.visible_navigation .icon-holder{
+	display: block;
+	position: absolute;
+	margin:0px auto;
+}
+.visible_navigation .icon-holder ul li{
+	display: inline-block;
+	float:left;
+}
+/*
+ * Media Queries
+ * The Break Points:
+ * Desktop : min-width:1025px;
+ * Tablet  : min-width:768px and max-width:1024px;
+ * Mobile  : min-width:320px and max-width:767px;
+ *
+ */
+
+/* 
+ * For Mobile Phones
+ */
+@media only screen and (max-width:767px) {
+	[class*="col-"] {
+		width: 100%;
+	}
+	.visible_navigation {
+		width: 100% !important;
+		font-size: 0.95em !important;
+	}
+	.flexslider li {
+		width: 100%;
+	}
+	.flexslider {
+		height: 45px;
+	}
+	.titlecontainer {
+		font-size: 36px;
+	}
+	#about .left_desc {
+		float: none;
+		padding-top: 10px;
+		text-align: center;
+		font-size: 16px;
+	}
+	#about .right_desc {
+		display: none;
+	}
+	#what_we_do .titlecontainer {
+		font-size: 36px;
+	}
+	#what_we_do .buttonholder button {
+		background-color: rgba(0, 68, 167, 0.42);
+		color: white;
+		border: 2px solid white;
+		border-radius: 7px;
+		padding: 10px;
+		font-family: mainfont;
+	}
+	.explanation {
+		font-size: 24px;
+	}
+	.explanation h1 {
+		font-size: 36px;
+	}
+	ol.flex-control-nav.flex-control-paging {
+		display: none;
+	}
+	#our_cars .flexslider {
+		height: 100vh;
+		width: 100%;
+	}
+	#our_cars .flexslider .slides {
+		height: 100vh;
+	}
+	#our_cars .flexslider .slides img {
+		height: 100vh;
+		width: auto;
+	}
+	#sponsors {
+		height: 250vh !important;
+	}
+}
+@media only screen and (max-width:480px) {
+	.sponsorholder {
+		width: 100%;
+		overflow: hidden;
+	}
+	.sponsor {
+		width: 50%;
+		margin: 0px;
+	}
+	.sponsor.sponsor_1{
+		width:100%;
+	}
+}
